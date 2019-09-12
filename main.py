@@ -21,14 +21,13 @@ class MainApp(QWidget, design.Ui_MainWindow):
             key_encoded = encode_val(key)
             value_encoded = encode_val(self.txed_input.toPlainText())
             encoded = full_encode(value_encoded, key_encoded)
-            decoded = full_decode(encoded, key_encoded)
             self.txed_output.setText(''.join(decode_val(encoded)))
 
         elif self.rb_decrypt.isChecked():
             key_encoded = encode_val(key)
             value_encoded = encode_val(self.txed_input.toPlainText())
-            encoded = full_decode(value_encoded, key_encoded)
-            self.txed_output.setText(''.join(decode_val(encoded)))
+            decoded = full_decode(value_encoded, key_encoded)
+            self.txed_output.setText(''.join(decode_val(decoded)))
 
 
 def main():
